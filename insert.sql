@@ -1,8 +1,14 @@
 -- insert.sql
 
+-- Insert data into Statuses
+INSERT INTO Statuses (StatusDescription) VALUES
+('Available'),
+('Rented'),
+('Under Maintenance');
+
 -- Insert data into Locations
 INSERT INTO Locations (Address, City, State, ZipCode) VALUES
-('123 Pine St', 'Springfield', 'IL', '62701'), -- Edit to change data
+('123 Pine St', 'Springfield', 'IL', '62701'),
 ('456 Maple Ave', 'Shelbyville', 'IL', '62565'),
 ('789 Oak Blvd', 'Capital City', 'IL', '60007');
 
@@ -13,10 +19,10 @@ INSERT INTO Customers (FirstName, LastName, Email, PhoneNumber) VALUES
 ('Jim', 'Beam', 'jimbeam@example.com', '555-9012');
 
 -- Insert data into Bikes
-INSERT INTO Bikes (Model, Status, LastMaintenanceDate, LocationID) VALUES
-('Mountain 1000', 'Available', '2023-03-15', 1),
-('Road 550', 'Rented', '2023-03-20', 2),
-('Hybrid 300', 'Under Maintenance', '2023-03-25', 3);
+INSERT INTO Bikes (Model, StatusID, LastMaintenanceDate) VALUES
+('Mountain 1000', (SELECT StatusID FROM Statuses WHERE StatusDescription = 'Available'), '2023-03-15'),
+('Road 550', (SELECT StatusID FROM Statuses WHERE StatusDescription = 'Rented'), '2023-03-20'),
+('Hybrid 300', (SELECT StatusID FROM Statuses WHERE StatusDescription = 'Under Maintenance'), '2023-03-25');
 
 -- Insert data into Rentals
 INSERT INTO Rentals (CustomerID, BikeID, RentalStartDate, RentalEndDate, Price) VALUES
