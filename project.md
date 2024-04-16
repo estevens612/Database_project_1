@@ -31,6 +31,7 @@ Bike Rental Database
 * project.md update 5
 * main.py
 * main.py update 5 <!-- GUI frontend -->
+* main.py update 5.1 <!-- insert now functional, GUI organized -->
 
 ## Video
 [YouTube](https://youtube.com/) <!-- temp link until video is made -->
