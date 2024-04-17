@@ -620,10 +620,10 @@ button_delete_customer.grid(row=3, column=3, padx=5, pady=5)
 button_insert_location = tkinter.Button(window, text="Insert Location", command=insert_location)
 button_insert_location.grid(row=7, column=3, padx=5, pady=5)
 
-button_update_location = tkinter.Button(window, text="Update Location", command=lambda: update_location)
+button_update_location = tkinter.Button(window, text="Update Location", command=update_location)
 button_update_location.grid(row=8, column=3, padx=5, pady=5)
 
-button_delete_location = tkinter.Button(window, text="Delete Location", command=lambda: delete_location)
+button_delete_location = tkinter.Button(window, text="Delete Location", command=delete_location)
 button_delete_location.grid(row=9, column=3, padx=5, pady=5)
 
 
